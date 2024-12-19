@@ -20,14 +20,14 @@ int main(){
 		fflush(stdin);
 		printf("Sdt : ");
 		fgets(Ptit[i].phone,sizeof(Ptit[i].phone),stdin);
+		fflush(stdin);
 	}
 //In ra danh sach ra man hinh
-	printf("\n\nSTT\tHo va ten\t\tTuoi\t\tSdt\n");
 	for(int i = 1 ; i <= 5 ; i++){
-		printf(" %d\t", Ptit[i].id);
-		printf("%s", Ptit[i].name);
-		printf("%d\n", Ptit[i].age);
-		printf("%s\n", Ptit[i].phone);
+		printf("Sinh vien %d\n", Ptit[i].id);
+		printf("Ho va ten : %s", Ptit[i].name);
+		printf("Tuoi : %d\n", Ptit[i].age);
+		printf("So dien thoai : %s\n", Ptit[i].phone);
 	}
 	return 0;
 }

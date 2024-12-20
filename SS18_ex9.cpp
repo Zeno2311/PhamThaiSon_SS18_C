@@ -18,11 +18,11 @@ struct Dish{
 	int price;
 };
 //Gan 5 phan tu vao trong menu
-struct Dish menu[5]={
-	{1,"Banh mi",500000},
+struct Dish menu[100]={
+	{1,"Banh mi",5000},
 	{2,"Xoi xeo",10000},
-	{3,"Oc xao",15000},
-	{4,"Banh xeo",20000},
+	{3,"Oc xao",150000},
+	{4,"Banh xeo",40000},
 	{5,"Bun ca cay",25000},
 	
 };
@@ -114,16 +114,18 @@ void menu4(){
 		printf("%d. %s : %dVND\n", menu[i].id, menu[i].name, menu[i].price);
 	}
 }
-//menu5 sap xep cac phan tu ( chua lam duoc )
+//menu5 sap xep cac phan tu 
 void menu5(){
-	for(int i = 0 ; i < 4 ; i++){
-		if(menu[i].price > menu[i + 1].price){
-			int temp = menu[i].price;
-			menu[i].price = menu[i + 1].price;
-			menu[i + 1].price = temp;
+	for(int i = 0 ; i < n ; i++){
+		for(int j = 1 ; j < n - i - 1 ; j++ ){
+			if(menu[j].price > menu[j + 1].price){
+				struct Dish temp = menu[j];
+				menu[j] = menu[j + 1];
+				menu[j + 1] = temp;
+			}
 		}
 	}
-	for(int i = 0 ; i < 5 ;i++){
+	for(int i = 0 ; i < n ;i++){
 		printf("%d. %s : %dVND\n", menu[i].id, menu[i].name, menu[i].price);
 	}
 }
